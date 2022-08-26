@@ -56,6 +56,8 @@
         <commons-io.version>2.11.0</commons-io.version>
         <commons-compress.version>1.21</commons-compress.version>
         <lombok.version>1.18.24</lombok.version>
+        <!-- Kotlin configuration -->
+        <kotlin.version>1.7.10</kotlin.version>
         <!-- plugin versions -->
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
         <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
@@ -188,7 +190,17 @@
                         </execution>
                     </executions>
                 </plugin>
+                <!-- Kotlin plugins -->
+                <plugin>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-maven-plugin</artifactId>
+                    <version>${kotlin.version}</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
 </project>
