@@ -58,6 +58,7 @@
         <lombok.version>1.18.24</lombok.version>
         <logback.version>1.2.11</logback.version>
         <slf4j.version>1.7.36</slf4j.version>
+        <okhttp.version>4.9.0</okhttp.version>
         <!-- Kotlin configuration -->
         <kotlin.version>1.7.10</kotlin.version>
         <!-- plugin versions -->
@@ -106,6 +107,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
                 <version>${commons-compress.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
             </dependency>
             <!-- Lombok -->
             <dependency>
