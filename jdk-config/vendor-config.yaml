@@ -51,7 +51,7 @@
         - 17.0.1+12
         - 17+35
   parameters:
-    19.0.1.+10:
+    19.0.1+10:
       zulu-version: 19.30.11
     19+36:
       zulu-version: 19.28.81
@@ -78,7 +78,7 @@
     17+35:
       zulu-version: 17.28.13
 - vendor: CORRETTO
-  download-url-format: https://corretto.aws/downloads/resources/${VERSION}/amazon-corretto-${VERSION}-${OS}-${ARCH}.${PACKAGING}
+  download-url-format: https://corretto.aws/downloads/resources/${CORRETTO_VERSION}/amazon-corretto-${CORRETTO_VERSION}-${OS}-${ARCH}.${PACKAGING}
   public-key-url-format: https://corretto.aws/downloads/resources/${KEY_VERSION}/${KEY_ID}.pub
   supported-versions:
     - major-version: "19"
@@ -112,8 +112,8 @@
       key-version: 17.0.0.35.1
       key-id: B04F24E3
 - vendor: OPENJDK
-  download-url-format: https://download.java.net/java/GA/jdk${VERSION_BASE}/${HASH}/${BUMP}/GPL/openjdk-${VERSION-BASE}_${OS}-${ARCH}_bin.${PACKAGING}
-  checksum-url-format: https://download.java.net/java/GA/jdk${VERSION_BASE}/${HASH}/${BUMP}/GPL/openjdk-${VERSION-BASE}_${OS}-${ARCH}_bin.${PACKAGING}.sha256
+  download-url-format: https://download.java.net/java/GA/jdk${VERSION_BASE}/${HASH}/${BUMP}/GPL/openjdk-${VERSION_BASE}_${OS}-${ARCH}_bin.${PACKAGING}
+  checksum-url-format: https://download.java.net/java/GA/jdk${VERSION_BASE}/${HASH}/${BUMP}/GPL/openjdk-${VERSION_BASE}_${OS}-${ARCH}_bin.${PACKAGING}.sha256
   supported-versions:
     - major-version: "19"
       releases:
