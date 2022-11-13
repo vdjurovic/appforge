@@ -1,7 +1,7 @@
 ---
 - vendor: ADOPTIUM
-  download-url-format: https://github.com/adoptium/${REPO}/releases/download/jdk-${VERSION_BASE}%2B${BUMP}/OpenJDK${MAJOR_VERSION}U-jre_${ARCH}_${OS}_hotspot_${VERSION_BASE}_${BUMP}.${PACKAGING}
-  checksum-url-format: https://github.com/adoptium/${REPO}/releases/download/jdk-${VERSION_BASE}%2B${BUMP}/OpenJDK${MAJOR_VERSION}U-jre_${ARCH}_${OS}_hotspot_${VERSION_BASE}_${BUMP}.${PACKAGING}.sha256.txt
+  download-url-format: https://github.com/adoptium/${REPO}/releases/download/jdk-${VERSION_BASE}%2B${BUMP}/OpenJDK${MAJOR_VERSION}U-jdk_${ARCH}_${OS}_hotspot_${VERSION_BASE}_${BUMP}.${PACKAGING}
+  checksum-url-format: https://github.com/adoptium/${REPO}/releases/download/jdk-${VERSION_BASE}%2B${BUMP}/OpenJDK${MAJOR_VERSION}U-jdk_${ARCH}_${OS}_hotspot_${VERSION_BASE}_${BUMP}.${PACKAGING}.sha256.txt
   supported-versions:
     - major-version: "19"
       releases:
