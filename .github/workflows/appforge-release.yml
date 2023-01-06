@@ -1,16 +1,19 @@
 name: Release new APpForge version
-on: [push]
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
 jobs:
   release-maven-central:
     runs-on: ubuntu-latest
     steps:
       -  name: Install JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-          cache: 'maven'
-          server-id: maven-central-release
-          server-username: vdjurovic
-          server-password: ${{ secrets.MVN_CENTRAL_PASSWORD }}
+         uses: actions/setup-java@v3
+         with:
+           distribution: 'temurin'
+           java-version: '17'
+           cache: 'maven'
+           server-id: maven-central-release
+           server-username: vdjurovic
+           server-password: ${{ secrets.MVN_CENTRAL_PASSWORD }}
 

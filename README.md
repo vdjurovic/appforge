@@ -1,3 +1,6 @@
+
+[![.github/workflows/appforge-release.yml](https://github.com/bitshifted/appforge/actions/workflows/appforge-release.yml/badge.svg)](https://github.com/bitshifted/appforge/actions/workflows/appforge-release.yml)
+
 # AppForge
 
 AppForge is a complete solution for automated deployment and updating of multi-platform applications. It provides easy-to-use
