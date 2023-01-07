@@ -39,7 +39,7 @@
 
     <scm>
         <connection>scm:git:git://github.com/bitshifted/appforge.git</connection>
-        <developerConnection>scm:git:git://github.com/bitshifted/appforge.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:bitshifted/appforge.git</developerConnection>
         <url>https://github.com/bitshifted/appforge</url>
     </scm>
 
