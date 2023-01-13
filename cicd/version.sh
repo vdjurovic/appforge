@@ -14,7 +14,7 @@ MINOR_REGEX='^(feat)\s*(\(.+\))?\s?:\s*(.+)'
 MAJOR_REGEX='^(BREAKING CHANGE)\s*(\(.+\))?\s?:\s*(.+)'
 
 # get the latest tag
-LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`  &> /dev/null)
+LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`  2> /dev/null)
 if [ -z $LATEST_TAG ]; then
   LATEST_TAG="v1.0.0"
   echo "1.0.0"

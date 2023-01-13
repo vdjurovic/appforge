@@ -43,12 +43,15 @@ jobs:
           java-version: '17'
           cache: 'maven'
           server-id: maven-central-release
-          server-username: vdjurovic
-          server-password: ${{ secrets.MVN_CENTRAL_PASSWORD }}
+          server-username: MVN_CENTRAL_USERNAME
+          server-password: MVN_CENTRAL_PASSWORD
       - name: Release to Maven repo"
         run: |
           export VERSION=$(./cicd/version.sh)
           echo "Version to set: $VERSION"
           mvn -Dgpg.keyname=${{ secrets.GPG_KEY_NAME }} -Dgpg.passphrase=${{ secrets.MAVEN_SIGNING_KEY_PASSPHRASE }} \
               -DreleaseVersion=$VERSION -Dtag=v$VERSION  release:prepare release:perform
+        env:
+          MVN_CENTRAL_USERNAME: ${{ vars.MVN_CENTRAL_USERNAME }}
+          MVN_CENTRAL_PASSWORD: ${{ secrets.MVN_CENTRAL_PASSWORD }}
 
