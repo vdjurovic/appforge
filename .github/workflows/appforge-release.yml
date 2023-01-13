@@ -20,6 +20,7 @@ jobs:
       - name: Setup SSH
         run: |
           echo "Setting up SSH..."
+          mkdir ~/.ssh
           cat <<EOF | echo ${{ secrets.APPFORGE_DEPLOY_PRIV_KEY }} > ~/.ssh/appforge-key
           EOF
           cat <<EOF > ~/.ssh/config
