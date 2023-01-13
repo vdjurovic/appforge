@@ -22,6 +22,7 @@ jobs:
           echo "Setting up SSH..."
           mkdir ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/appforge-key
+          chmod 600 ~/.ssh/appforge-key
           ls -l ~/.ssh
           cat <<EOF > ~/.ssh/config
           Host github.com
