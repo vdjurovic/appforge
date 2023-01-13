@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "Setting up SSH..."
           mkdir ~/.ssh
-          cat ${{ secrets.APPFORGE_DEPLOY_PRIV_KEY }} > ~/.ssh/appforge-key
+          echo ${{ secrets.APPFORGE_DEPLOY_PRIV_KEY }} > ~/.ssh/appforge-key
           ls -l ~/.ssh
           cat <<EOF > ~/.ssh/config
           Host github.com
