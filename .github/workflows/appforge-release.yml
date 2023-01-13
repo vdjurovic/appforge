@@ -45,8 +45,6 @@ jobs:
           server-id: maven-central-release
           server-username: vdjurovic
           server-password: ${{ secrets.MVN_CENTRAL_PASSWORD }}
-      - run: | 
-          cat ~/.m2/settings.xml
       - name: Release to Maven repo"
         run: |
           export VERSION=$(./cicd/version.sh)
