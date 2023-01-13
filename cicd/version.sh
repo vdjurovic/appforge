@@ -17,6 +17,8 @@ MAJOR_REGEX='^(BREAKING CHANGE)\s*(\(.+\))?\s?:\s*(.+)'
 LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`  &> /dev/null)
 if [ -z $LATEST_TAG ]; then
   LATEST_TAG="v1.0.0"
+  echo $LATEST_TAG
+  exit 0
 fi
 
 LATEST_VERSION=""
