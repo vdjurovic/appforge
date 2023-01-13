@@ -13,7 +13,7 @@
 
     <groupId>co.bitshifted.appforge</groupId>
     <artifactId>appforge</artifactId>
-    <version>1.0.20-SNAPSHOT</version>
+    <version>1.0.20</version>
     <packaging>pom</packaging>
 
     <name>AppForge</name>
@@ -40,7 +40,7 @@
         <connection>scm:git:git://github.com/bitshifted/appforge.git</connection>
         <developerConnection>scm:git:git@github.com:bitshifted/appforge.git</developerConnection>
         <url>https://github.com/bitshifted/appforge</url>
-      <tag>v1.0.0</tag>
+      <tag>v1.0.20</tag>
   </scm>
 
     <properties>
