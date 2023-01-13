@@ -23,7 +23,6 @@ jobs:
           mkdir ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/appforge-key
           chmod 600 ~/.ssh/appforge-key
-          ls -l ~/.ssh
           cat <<EOF > ~/.ssh/config
           Host github.com
             User git
@@ -47,7 +46,7 @@ jobs:
           server-username: vdjurovic
           server-password: ${{ secrets.MVN_CENTRAL_PASSWORD }}
       - run: | 
-          echo "Current directory: $PWD"
+          cat ~/.m2/settings.xml
       - name: Release to Maven repo"
         run: |
           export VERSION=$(./cicd/version.sh)
