@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "Setting up SSH..."
           mkdir ~/.ssh
-          echo ${{ secrets.APPFORGE_DEPLOY_PRIV_KEY }} > ~/.ssh/appforge-key
+          echo "$SSH_KEY" > ~/.ssh/appforge-key
           ls -l ~/.ssh
           cat <<EOF > ~/.ssh/config
           Host github.com
@@ -33,6 +33,9 @@ jobs:
           echo "Starting SSH agent"
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/appforge-key
+        shell: bash
+        env:
+          SSH_KEY: ${{ secrets.APPFORGE_DEPLOY_PRIV_KEY }}
       - name: Install JDK
         uses: actions/setup-java@v3
         with:
