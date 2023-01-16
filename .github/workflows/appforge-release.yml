@@ -52,7 +52,7 @@ jobs:
           export VERSION=$(./cicd/version.sh)
           echo "Version to set: $VERSION"
           mvn -Dgpg.keyname=${{ secrets.GPG_KEY_NAME }} -Dgpg.passphrase=${{ secrets.MAVEN_SIGNING_KEY_PASSPHRASE }} \
-              -Dcurrent.version=$VERSION deploy
+              -Drevision=$VERSION deploy
         env:
           MVN_CENTRAL_USERNAME: ${{ vars.MVN_CENTRAL_USERNAME }}
           MVN_CENTRAL_PASSWORD: ${{ secrets.MVN_CENTRAL_PASSWORD }}
