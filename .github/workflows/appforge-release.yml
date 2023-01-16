@@ -1,4 +1,4 @@
-name: Release new APpForge version
+name: Release new AppForge version
 on:
   push:
     branches: [main]
@@ -47,13 +47,17 @@ jobs:
           server-id: maven-central-release
           server-username: MVN_CENTRAL_USERNAME
           server-password: MVN_CENTRAL_PASSWORD
-      - name: Release to Maven repo"
+      - name: Release to Maven repo
         run: |
           export VERSION=$(./cicd/version.sh)
           echo "Version to set: $VERSION"
           mvn -Dgpg.keyname=${{ secrets.GPG_KEY_NAME }} -Dgpg.passphrase=${{ secrets.MAVEN_SIGNING_KEY_PASSPHRASE }} \
-              -DreleaseVersion=$VERSION -Dtag=v$VERSION  release:prepare release:perform
+              -Dcurrent.version=$VERSION deploy
         env:
           MVN_CENTRAL_USERNAME: ${{ vars.MVN_CENTRAL_USERNAME }}
           MVN_CENTRAL_PASSWORD: ${{ secrets.MVN_CENTRAL_PASSWORD }}
+      - name: Tag version
+        run: |
+          git tag  v$VERSION
+          git push origin --tags
 
