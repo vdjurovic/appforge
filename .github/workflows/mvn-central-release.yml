@@ -12,7 +12,7 @@ jobs:
       - name: Checkout CI/CD repo
         uses: actions/checkout@v3
         with:
-          repository: bitshifted/appforge-common
+          repository: bitshifted/appforge-cicd
           path: cicd
       - name: Setup CI/CD scripts
         run: |
